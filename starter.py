@@ -150,8 +150,8 @@ def generate_summarize(raw_text, callback):
 
 
 # page title
-st.set_page_config(page_title='🦜🔗 문서 기반 요약 및 QA 챗봇')
-st.title('🦜🔗 문서 기반 요약 및 QA 챗봇')
+st.set_page_config(page_title='👩‍🎓📃 논문 요약 및 QA chatbot')
+st.title('👩‍🎓📃 논문 요약 및 QA 챗봇')
 
 # enter token
 import os
@@ -175,7 +175,7 @@ if uploaded_file:
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
         ChatMessage(
-            role="assistant", content="안녕하세요! 저는 문서에 대한 이해를 도와주는 챗봇입니다. 어떤게 궁금하신가요?"
+            role="assistant", content="안녕하세요! 저는 논문 리뷰 및 연구주제 탐색을 도와주는 챗봇입니다. 어떤 논문에 대해서 궁금하신가요?"
         )
     ]
 
