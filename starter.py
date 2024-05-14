@@ -12,21 +12,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Function to apply custom CSS for background color
-def set_background_color(color: str):
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-color: {color};
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-# Set the background color
-set_background_color('lightSkyBlue')
 
 # handle streaming conversation
 class StreamHandler(BaseCallbackHandler):
@@ -167,6 +152,23 @@ def generate_summarize(raw_text, callback):
 # page title
 st.set_page_config(page_title='👩‍🎓📃 논문 요약 및 QA chatbot')
 st.title('👩‍🎓📃 논문 요약 및 QA 챗봇')
+
+
+# Function to apply custom CSS for background color
+def set_background_color(color: str):
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-color: {color};
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# Set the background color
+set_background_color('lightSkyBlue')
 
 # enter token
 import os
