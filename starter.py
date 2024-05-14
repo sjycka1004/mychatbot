@@ -12,17 +12,21 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Custom CSS to change the background color to light yellow
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: #ffffe0;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# Function to apply custom CSS for background color
+def set_background_color(color: str):
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-color: {color};
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# Set the background color
+set_background_color('lightSkyBlue')
 
 # handle streaming conversation
 class StreamHandler(BaseCallbackHandler):
@@ -33,7 +37,6 @@ class StreamHandler(BaseCallbackHandler):
     def on_llm_new_token(self, token: str, **kwargs) -> None:
         self.text += token
         self.container.markdown(self.text)
-
 
 # function to extract text from an HWP file
 import olefile
