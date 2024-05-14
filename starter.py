@@ -191,7 +191,7 @@ if save_button and len(api_key)>10:
     st.sidebar.success("API Key saved successfully!")
 
 # Sidebar with options
-st.sidebar.title("Options")
+st.sidebar.title("Works")
 option = st.sidebar.selectbox(
     'Select an option:',
     ('Summarize your paper', 'Compare papers')
