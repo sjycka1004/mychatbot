@@ -166,9 +166,19 @@ def set_background_color(color: str):
         """,
         unsafe_allow_html=True
     )
+    st.markdown(
+        f"""
+        <style>
+        body {{
+            background-color: {color};
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
 # Set the background color
-set_background_color('lightSkyBlue')
+set_background_color('lightblue')
 
 # enter token
 import os
