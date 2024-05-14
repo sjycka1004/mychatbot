@@ -12,6 +12,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# Custom CSS to change the background color to light yellow
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #ffffe0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # handle streaming conversation
 class StreamHandler(BaseCallbackHandler):
     def __init__(self, container, initial_text=""):
