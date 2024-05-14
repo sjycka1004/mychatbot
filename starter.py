@@ -162,7 +162,7 @@ if save_button and len(api_key)>10:
     st.sidebar.success("API Key saved successfully!")
 
 # file upload
-uploaded_file = st.file_uploader('Upload an document', type=['hwp','pdf'])
+uploaded_file = st.file_uploader('리뷰하실 논문을 업로드해주시면 작업을 도와드릴게요~', type=['hwp','pdf'])
 
 # file upload logic
 if uploaded_file:
