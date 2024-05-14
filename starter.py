@@ -150,8 +150,8 @@ def generate_summarize(raw_text, callback):
 
 
 # page title
-st.set_page_config(page_title='👩‍🎓📃 논문 요약 및 QA chatbot')
-st.title('👩‍🎓📃 논문 요약 및 QA 챗봇')
+st.set_page_config(page_title='👩‍🎓📃 논문 리뷰 및 QA chatbot')
+st.title('👩‍🎓📃 논문 리뷰 및 QA 챗봇')
 
 
 # Function to apply custom CSS for background color
@@ -180,6 +180,8 @@ def set_background_color(color: str):
 # Set the background color
 set_background_color('lightblue')
 
+
+
 # enter token
 import os
 api_key = st.sidebar.text_input("Enter your OpenAI API Key", type="password")
@@ -187,6 +189,13 @@ save_button = st.sidebar.button("Save Key")
 if save_button and len(api_key)>10:
     os.environ["OPENAI_API_KEY"] = api_key
     st.sidebar.success("API Key saved successfully!")
+
+# Sidebar with options
+st.sidebar.title("Options")
+option = st.sidebar.selectbox(
+    'Select an option:',
+    ('Summarize your paper', 'Compare papers')
+)
 
 # file upload
 uploaded_file = st.file_uploader('리뷰하실 논문을 업로드해주시면 작업을 도와드릴게요~', type=['hwp','pdf'])
